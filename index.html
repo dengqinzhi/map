@@ -1,0 +1,98 @@
+<html>
+	<head>
+	    <title>我的足迹</title>
+                <meta charset="UTF-8">
+
+		<!--引入jQuery框架-->
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<!--引入jVectorMap库-->
+		<script type="text/javascript" src="js/jquery-jvectormap-1.2.2.min.js"></script>
+		<!--引入样式表-->
+		<link href="js/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen">
+
+
+		<!--引入中国地图数据库-->
+		<script type="text/javascript" src="js/jquery-jvectormap-cn-merc-en.js"></script>
+
+		<!--引入美国地图数据库-->
+		<!--script type="text/javascript" src="js/jquery-jvectormap-us-aea.js"></script-->
+		<!--引入世界地图数据库-->
+		<!--script type="text/javascript" src="js/jquery-jvectormap-world-mill.js"></script-->
+
+	</head>
+<body>
+	<!--background-color: 地图背景颜色-->
+	<div id="map" style="background-color:#353535"> </div>
+	<script>
+		$('#map').vectorMap({
+
+			// 此处更改地图
+			map: 'cn_merc_en',   // 中国地图
+			//map: 'us_aea',     // 美国地图
+			//map: 'world_mill', // 世界地图
+
+
+			backgroundColor: 'transparent',
+			zoomMin: 0.9, // 鼠标缩放时的最小比例
+			zoomMax: 6.0, // 鼠标缩放时的最大比例
+			focusOn: {
+				x: 0.55,
+				y: 2,
+				scale: 0.9
+			},
+			regionStyle: {
+				initial: {
+					fill: '#e5e5e5',   // 地图颜色
+					"fill-opacity": 1, // 省份（州）是否隐藏，鼠标滑动时显示; 1：显示，2：隐藏。
+					stroke: 'none',
+					"stroke-width": 0,
+					"stroke-opacity": 1
+				},
+				hover: {
+					fill: '#ccc',  // 鼠标滑动至某省份的高亮颜色。
+					"fill-opacity": 0.8
+				},
+				selected: {
+					fill: 'yellow'
+				},
+				selectedHover: {}
+			},
+			markerStyle: {
+		        initial: {
+		            fill: '#fd8888', // 足迹位置的填充颜色
+		            stroke: '#fff'   // 足迹位置的描边颜色
+		        },
+				hover: {
+					fill: '#fd2020', // 鼠标滑动至足迹位置后的填充颜色
+					stroke: '#fff',  // 鼠标滑动至足迹位置后的描边颜色
+					"fill-opacity": 0.8
+				},
+		    },
+			markers: [ // 足迹位置
+
+				// {latLng: [经度（保留两位小数）, 纬度（保留两位小数）], name: '城市名称'},
+				// 推荐查询经纬度网站：http://www.gpsspg.com/maps.htm
+
+		        {latLng: [32.65, 108.61], name: '陕西-安康'},
+				{latLng: [30.04, 121.16], name: '浙江-余姚'},
+                {latLng: [34.23, 108.93], name: '陕西-西安'},
+                {latLng: [33.06, 107.03], name: '陕西-汉中'},
+                {latLng: [30.35, 105.45], name: '四川-遂宁'},
+                {latLng: [24.88, 118.61], name: '福建-泉州'},
+                {latLng: [24.48, 118.03], name: '福建-厦门'},
+                {latLng: [26.04, 119.27], name: '福建-福州'},
+                {latLng: [29.40, 106.54], name: '重庆'},
+                {latLng: [31.40, 121.48], name: '上海'},
+                {latLng: [30.25, 121.26], name: '浙江-慈溪'},
+                {latLng: [30.77, 106.27], name: '四川-南充'},
+                {latLng: [29.89, 121.84], name: '浙江-宁波'},
+                {latLng: [30.58, 114.02], name: '湖北-武汉'},
+                {latLng: [27.75, 118.03], name: '福建-武夷山'},
+                {latLng: [25.41, 118.99], name: '福建-莆田'},
+                {latLng: [30.20, 120.21], name: '浙江-杭州'},
+                {latLng: [29.06, 119.39], name: '浙江-金华'},
+                {latLng: [29.43, 120.14], name: '浙江-诸暨'},
+		    ]
+		});
+	</script>
+</html>
